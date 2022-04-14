@@ -12,6 +12,7 @@ const StyledNavbar = styled.div`
   padding: 0 20px;
   position: sticky;
   top: 0;
+  z-index: 1000;
 `;
 
 const LeftContainer = styled.div``;

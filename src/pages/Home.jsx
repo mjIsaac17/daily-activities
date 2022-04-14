@@ -4,30 +4,39 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LoopIcon from '@mui/icons-material/Loop';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import PieChart from '../components/PieChart';
 
 const Container = styled.div`
-  align-items: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   height: 100%;
-`;
-
-const Paper = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  height: 95%;
+  margin: 0 auto;
   width: min(1500px, 95%);
 `;
 
-const RecentActivitiesContainer = styled.div`
+const ActivitiesContainer = styled.div`
+  display: flex;
+  height: 40vh;
+  margin-top: 20px;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const ChartContainer = styled.div`
+  margin-top: 20px;
+  height: 70vh;
+  width: 100%;
+`;
+
+const Paper = styled.div`
+  background-color: white;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
-  height: 40vh;
+  height: 100%;
   overflow-y: scroll;
   padding: 0 15px 15px 15px;
-  width: 100%;
-  margin: 5px;
+  width: ${(props) => props.width || '100%'};
 `;
 
 const Title = styled.h3`
@@ -48,8 +57,9 @@ const ListItem = styled.li`
   border-top: 1px solid #cdcdcd;
   border-bottom: 1px solid #cdcdcd;
   display: flex;
-  padding: 10px 5px;
   justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 8px 5px;
   &:hover {
     background-color: #f5f5f5;
   }
@@ -95,17 +105,6 @@ const ListItemViewBtn = styled.button`
   }
 `;
 
-const ActivitiesSummaryContainer = styled.div`
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  height: 40vh;
-  overflow-y: scroll;
-  padding: 0 15px 15px 15px;
-  width: 100%;
-  margin: 5px;
-`;
-
 const ListItemNumber = styled.span`
   font-weight: 900;
 `;
@@ -113,8 +112,8 @@ const ListItemNumber = styled.span`
 export default function Home() {
   return (
     <Container>
-      <Paper>
-        <RecentActivitiesContainer>
+      <ActivitiesContainer>
+        <Paper width='49%'>
           <Title>Recent activities</Title>
           <List>
             <ListItem>
@@ -177,12 +176,10 @@ export default function Home() {
               </ListItemViewBtn>
             </ListItem>
           </List>
-        </RecentActivitiesContainer>
-      </Paper>
+        </Paper>
 
-      <Paper>
-        <ActivitiesSummaryContainer>
-          <Title>Summary</Title>
+        <Paper width='49%'>
+          <Title>Activities Summary</Title>
           <List>
             <ListItem>
               <ListItemIconTitle iconColor='green' fontSize='18px'>
@@ -209,8 +206,14 @@ export default function Home() {
               <ListItemNumber>3</ListItemNumber>
             </ListItem>
           </List>
-        </ActivitiesSummaryContainer>
-      </Paper>
+        </Paper>
+      </ActivitiesContainer>
+      <ChartContainer>
+        <Paper>
+          <Title>Activities Summary Graphic</Title>
+          <PieChart />
+        </Paper>
+      </ChartContainer>
     </Container>
   );
 }

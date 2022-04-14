@@ -6,11 +6,14 @@ import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 const Container = styled.div`
+  color: #14007a;
   flex: 1;
   min-width: 200px;
   max-width: 250px;
   background-color: #8dcaff;
-  overflow-y: scroll;
+  position: sticky;
+  height: calc(100vh - 60px);
+  top: 60px;
 `;
 
 const Category = styled.h4`
