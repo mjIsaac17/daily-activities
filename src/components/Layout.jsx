@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Home from '../pages/Home';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 
@@ -16,7 +17,10 @@ export default function Layout() {
       <Navbar />
       <Container>
         <Sidebar />
-        <Body>Home</Body>
+        <Body>
+          {/* Add router here */}
+          <Home />
+        </Body>
       </Container>
     </>
   );
