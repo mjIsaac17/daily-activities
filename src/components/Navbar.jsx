@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { useDispatch } from 'react-redux';
+import { logout } from '../redux/reducers/userReducer';
 
 const StyledNavbar = styled.div`
   align-items: center;
@@ -55,6 +57,11 @@ const NavLink = styled.a`
 `;
 
 export default function Navbar() {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <StyledNavbar>
       <LeftContainer>
@@ -66,7 +73,7 @@ export default function Navbar() {
           <NotificationsIcon style={{ cursor: 'pointer' }} />
         </NoficationsContainer>
         <SettingsIcon style={{ cursor: 'pointer' }} />
-        <NavLink>Logout</NavLink>
+        <NavLink onClick={handleLogout}>Logout</NavLink>
       </RightContainer>
     </StyledNavbar>
   );

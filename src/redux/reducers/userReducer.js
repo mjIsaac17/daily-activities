@@ -21,9 +21,15 @@ const userReducer = createSlice({
       state.isLoading = false;
       state.error = '';
       state.currentUser = action.payload;
+    },
+    logout: (state) => {
+      state.currentUser = initialState.currentUser;
+      state.error = initialState.error;
+      state.isLoading = initialState.isLoading;
     }
   }
 });
 
-export const { setLoading, setError, loginSuccess } = userReducer.actions;
+export const { setLoading, setError, loginSuccess, logout } =
+  userReducer.actions;
 export default userReducer.reducer;

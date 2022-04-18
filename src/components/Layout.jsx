@@ -10,16 +10,13 @@ const Container = styled.div`
 const Body = styled.div`
   flex: 5;
 `;
-export default function Layout() {
+export default function Layout({ children }) {
   return (
     <>
       <Navbar />
       <Container>
         <Sidebar />
-        <Body>
-          {/* Add router here */}
-          <Home />
-        </Body>
+        <Body>{children}</Body>
       </Container>
     </>
   );

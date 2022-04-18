@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Input = styled.input`
   border: none;
@@ -10,8 +11,32 @@ const Input = styled.input`
 `;
 
 export default function InputText({
+  name,
   placeholder = 'Enter text',
-  type = 'text'
+  onChange,
+  type
 }) {
-  return <Input placeholder={placeholder} type={type} />;
+  return (
+    <Input
+      placeholder={placeholder}
+      type={type}
+      name={name}
+      onChange={onChange}
+    />
+  );
 }
+
+InputText.propTypes = {
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  type: PropTypes.oneOf([
+    'text',
+    'file',
+    'number',
+    'date',
+    'file',
+    'password',
+    'email'
+  ]).isRequired
+};
