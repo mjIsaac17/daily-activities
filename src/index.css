@@ -16,6 +16,11 @@ code {
     monospace;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 #root{
   height: 100vh;
   width: 100%;
@@ -42,4 +47,3 @@ code {
   display: flex;
   flex-direction: column;
 }
-

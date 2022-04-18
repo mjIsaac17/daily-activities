@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../components/Button';
 import InputText from '../components/InputText';
@@ -153,7 +154,9 @@ export default function Login() {
           />
         </LoginForm>
         <ErrorMessage>{error}</ErrorMessage>
-        <Register>Create new account</Register>
+        <Register>
+          <Link to='/register'>Create new account</Link>
+        </Register>
       </LoginContainer>
     </LoginPage>
   );
