@@ -1,11 +1,18 @@
+import styled from 'styled-components';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import Button from '../components/Button';
-import InputText from '../components/InputText';
 import { useForm } from '../hooks/useForm';
 import { login } from '../redux/apiRequests/userRequests';
+import Button from '../components/Button';
+import {
+  ErrorMessage,
+  Form,
+  FormInput,
+  Label
+} from '../components/FormComponents';
+import InputText from '../components/InputText';
+import { Subtitle, Title, TitleContainer } from '../components/Typography';
 
 const LoginPage = styled.div`
   background: rgb(2, 0, 36);
@@ -30,47 +37,7 @@ const LoginContainer = styled.div`
   width: min(400px, 90%);
 `;
 
-const TitleContainer = styled.div`
-  color: #626262;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  text-align: center;
-  top: 15px;
-`;
-
-const Title = styled.h3`
-  font-size: 28px;
-  font-weight: 900;
-`;
-
-const Subtitle = styled.h6`
-  font-size: 20px;
-  font-weight: 500;
-`;
-
-const LoginForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-`;
-
-const FormInput = styled.div`
-  margin-bottom: 20px;
-`;
-
-const ErrorMessage = styled.span`
-  color: red;
-  margin-top: 2px;
-  font-size: 12px;
-`;
-
-const Label = styled.label`
-  font-weight: 600;
-  margin-bottom: 5px;
-`;
-
-const Register = styled.a`
+const RedirectToRegister = styled.a`
   color: #626262;
   bottom: 15px;
   font-size: 14px;
@@ -123,7 +90,7 @@ export default function Login() {
           <Title>Daily activities app</Title>
           <Subtitle>Welcome back!</Subtitle>
         </TitleContainer>
-        <LoginForm onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <FormInput className='flex-column'>
             <Label>Email</Label>
             <InputText
@@ -152,11 +119,11 @@ export default function Login() {
             text='Login'
             type='submit'
           />
-        </LoginForm>
+        </Form>
         <ErrorMessage>{error}</ErrorMessage>
-        <Register>
+        <RedirectToRegister>
           <Link to='/register'>Create new account</Link>
-        </Register>
+        </RedirectToRegister>
       </LoginContainer>
     </LoginPage>
   );

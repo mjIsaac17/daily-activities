@@ -1,11 +1,19 @@
+import styled from 'styled-components';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import Button from '../components/Button';
-import InputText from '../components/InputText';
 import { useForm } from '../hooks/useForm';
 import { register } from '../redux/apiRequests/userRequests';
+import Button from '../components/Button';
+import InputText from '../components/InputText';
+import {
+  ErrorMessage,
+  Form,
+  FormInput,
+  Label,
+  Row
+} from '../components/FormComponents';
+import { Subtitle, Title, TitleContainer } from '../components/Typography';
 
 const RegisterPage = styled.div`
   background: rgb(2, 0, 36);
@@ -30,52 +38,7 @@ const RegisterContainer = styled.div`
   width: min(440px, 90%);
 `;
 
-const TitleContainer = styled.div`
-  color: #626262;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  text-align: center;
-  top: 15px;
-`;
-
-const Title = styled.h3`
-  font-size: 28px;
-  font-weight: 900;
-`;
-
-const Subtitle = styled.h6`
-  font-size: 20px;
-  font-weight: 500;
-`;
-
-const LoginForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-`;
-
-const FormInput = styled.div`
-  margin-bottom: 20px;
-`;
-
-const Row = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const ErrorMessage = styled.span`
-  color: red;
-  margin-top: 2px;
-  font-size: 12px;
-`;
-
-const Label = styled.label`
-  font-weight: 600;
-  margin-bottom: 5px;
-`;
-
-const Login = styled.a`
+const RedirectToLogin = styled.a`
   color: #626262;
   bottom: 15px;
   font-size: 14px;
@@ -163,7 +126,7 @@ export default function Register() {
           <Title>Daily activities app</Title>
           <Subtitle>Create new account</Subtitle>
         </TitleContainer>
-        <LoginForm onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <Row>
             <FormInput className='flex-column'>
               <Label>Name</Label>
@@ -236,11 +199,11 @@ export default function Register() {
             text='Register'
             type='submit'
           />
-        </LoginForm>
+        </Form>
         <ErrorMessage>{error}</ErrorMessage>
-        <Login>
+        <RedirectToLogin>
           <Link to='/login'>Already have an account? Login</Link>
-        </Login>
+        </RedirectToLogin>
       </RegisterContainer>
     </RegisterPage>
   );
