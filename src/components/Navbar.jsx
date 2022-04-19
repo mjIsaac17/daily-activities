@@ -3,6 +3,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useDispatch } from 'react-redux';
 import { logout } from '../redux/reducers/userReducer';
+import { Link } from 'react-router-dom';
 
 const StyledNavbar = styled.div`
   align-items: center;
@@ -65,7 +66,9 @@ export default function Navbar() {
   return (
     <StyledNavbar>
       <LeftContainer>
-        <NavbarTitle>Daily activities app</NavbarTitle>
+        <NavbarTitle>
+          <Link to='/'>Daily activities app</Link>
+        </NavbarTitle>
       </LeftContainer>
       <RightContainer>
         <NoficationsContainer>

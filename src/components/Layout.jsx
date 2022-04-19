@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Home from '../pages/Home';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 

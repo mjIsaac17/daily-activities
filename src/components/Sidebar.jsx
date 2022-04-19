@@ -4,6 +4,7 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import CategoryIcon from '@mui/icons-material/Category';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   color: #14007a;
@@ -47,7 +48,8 @@ export default function Sidebar() {
       <Category>Activities</Category>
       <List>
         <ListItem>
-          <FormatListBulletedIcon /> All my activities
+          <FormatListBulletedIcon />
+          <Link to='/activities'>All my activities</Link>
         </ListItem>
         <ListItem>
           <AssignmentIcon /> To-do
@@ -56,7 +58,8 @@ export default function Sidebar() {
           <TaskAltIcon /> Completed
         </ListItem>
         <ListItem>
-          <AddCircleIcon /> Add new
+          <AddCircleIcon />
+          <Link to='/activities/new'>Add new</Link>
         </ListItem>
       </List>
       <Category>Categories</Category>

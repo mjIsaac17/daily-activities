@@ -10,10 +10,14 @@ import {
   REGISTER
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import activityReducer from './reducers/activityReducer';
 
 import userReducer from './reducers/userReducer';
 
-const rootReducer = combineReducers({ user: userReducer });
+const rootReducer = combineReducers({
+  user: userReducer,
+  activity: activityReducer
+});
 
 const persistConfig = {
   key: 'root',
