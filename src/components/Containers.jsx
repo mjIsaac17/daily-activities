@@ -6,7 +6,7 @@ export const Paper = styled.div`
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   height: ${(props) => props.height || '100%'};
-  overflow-y: scroll;
+  overflow-y: ${(props) => !props.noScroll && 'scroll'};
   padding: 15px;
   width: ${(props) => props.width || '100%'};
 `;

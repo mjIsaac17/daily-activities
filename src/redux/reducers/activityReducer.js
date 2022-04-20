@@ -24,6 +24,11 @@ const activityReducer = createSlice({
     successGetActivities: (state, action) => {
       state.isLoading = false;
       state.activityList = action.payload;
+    },
+    successAddActivity: (state, action) => {
+      state.isLoading = false;
+      state.activityList = [action.payload, ...state.activityList];
+      state.error = '';
     }
   }
 });
@@ -32,6 +37,7 @@ export const {
   setLoading,
   setError,
   setCurrentActivity,
-  successGetActivities
+  successGetActivities,
+  successAddActivity
 } = activityReducer.actions;
 export default activityReducer.reducer;

@@ -10,8 +10,10 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-size: 28px;
+  text-align: center;
+  font-size: ${(props) => props.fontSize || '20px'};
   font-weight: 900;
+  margin-bottom: 10px;
 `;
 
 export const Subtitle = styled.h6`

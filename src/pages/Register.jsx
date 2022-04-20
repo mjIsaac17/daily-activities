@@ -128,7 +128,7 @@ export default function Register() {
         </TitleContainer>
         <Form onSubmit={handleSubmit}>
           <Row>
-            <FormInput className='flex-column'>
+            <FormInput>
               <Label>Name</Label>
               <InputText
                 placeholder='Name'
@@ -138,7 +138,7 @@ export default function Register() {
               />
               <ErrorMessage>{formError.name}</ErrorMessage>
             </FormInput>
-            <FormInput className='flex-column'>
+            <FormInput>
               <Label>Lastname</Label>
               <InputText
                 placeholder='Lastname'
@@ -149,7 +149,7 @@ export default function Register() {
               <ErrorMessage>{formError.lastName}</ErrorMessage>
             </FormInput>
           </Row>
-          <FormInput className='flex-column'>
+          <FormInput>
             <Label>Email</Label>
             <InputText
               placeholder='example@email.com'
@@ -159,7 +159,7 @@ export default function Register() {
             />
             <ErrorMessage>{formError.email}</ErrorMessage>
           </FormInput>
-          <FormInput className='flex-column'>
+          <FormInput>
             <Label>Age</Label>
             <InputText
               placeholder='Age'
@@ -170,7 +170,7 @@ export default function Register() {
             <ErrorMessage>{formError.age}</ErrorMessage>
           </FormInput>
           <Row>
-            <FormInput className='flex-column'>
+            <FormInput>
               <Label>Password</Label>
               <InputText
                 placeholder='Password'
@@ -180,7 +180,7 @@ export default function Register() {
               />
               <ErrorMessage>{formError.password}</ErrorMessage>
             </FormInput>
-            <FormInput className='flex-column'>
+            <FormInput>
               <Label>Confirm password</Label>
               <InputText
                 placeholder='Confirm password'

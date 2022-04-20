@@ -1,4 +1,14 @@
 export const colorStyles = {
+  primary: {
+    bgColor: '#2098C1',
+    bgColorHover: '#268BAF',
+    color: 'white'
+  },
+  secondary: {
+    bgColor: '#B064D9',
+    bgColorHover: '#8919C4',
+    color: 'white'
+  },
   completed: {
     color: '#094c6d',
     bgColor: '#a9ffc1'

@@ -91,7 +91,7 @@ export default function Login() {
           <Subtitle>Welcome back!</Subtitle>
         </TitleContainer>
         <Form onSubmit={handleSubmit}>
-          <FormInput className='flex-column'>
+          <FormInput>
             <Label>Email</Label>
             <InputText
               placeholder='example@email.com'
@@ -101,7 +101,7 @@ export default function Login() {
             />
             <ErrorMessage>{formError.email}</ErrorMessage>
           </FormInput>
-          <FormInput className='flex-column'>
+          <FormInput>
             <Label>Password</Label>
             <InputText
               placeholder='Password'

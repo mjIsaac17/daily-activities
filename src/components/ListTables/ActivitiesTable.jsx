@@ -28,7 +28,6 @@ const columns = [
         default:
           break;
       }
-      console.log(styles.completed);
       return (
         <Chip
           text={params.row.status}

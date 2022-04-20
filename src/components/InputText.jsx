@@ -14,7 +14,8 @@ export default function InputText({
   name,
   placeholder = 'Enter text',
   onChange,
-  type
+  type,
+  value
 }) {
   return (
     <Input
@@ -22,6 +23,37 @@ export default function InputText({
       type={type}
       name={name}
       onChange={onChange}
+      value={value}
+    />
+  );
+}
+
+const StyledTextarea = styled.textarea`
+  border: none;
+  border-bottom: 1px solid gray;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  height: 45vh;
+  padding: 10px 2px;
+  resize: none;
+  &:focus {
+    outline: none;
+  }
+`;
+
+export function TextArea({
+  name,
+  onChange,
+  placeholder = 'Enter text',
+  value
+}) {
+  return (
+    <StyledTextarea
+      placeholder={placeholder}
+      name={name}
+      onChange={onChange}
+      value={value}
     />
   );
 }
