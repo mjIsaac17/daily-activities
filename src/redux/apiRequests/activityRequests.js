@@ -4,6 +4,7 @@ import {
   successAddActivity,
   successGetActivities
 } from '../reducers/activityReducer';
+import setSnackbar from '../actions/snackbar';
 
 export const getActivities = async (dispatch, token) => {
   try {
@@ -26,6 +27,7 @@ export const saveActivity = async (activity, dispatch, token) => {
       return;
     }
     dispatch(successAddActivity(resp.activity));
+    setSnackbar(dispatch, 'success', 'Success', 'Activity added', true);
   } catch (error) {
     dispatch(setError('An error ocurred when saving the activity'));
   }

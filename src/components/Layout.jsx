@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import Toast from './Toast';
 
 const Container = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ export default function Layout({ children }) {
     <>
       <Navbar />
       <Container>
+        <Toast />
         <Sidebar />
         <Body>{children}</Body>
       </Container>

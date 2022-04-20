@@ -11,12 +11,13 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import activityReducer from './reducers/activityReducer';
-
 import userReducer from './reducers/userReducer';
+import snackbarReducer from './reducers/snackbarReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
-  activity: activityReducer
+  activity: activityReducer,
+  snackbar: snackbarReducer
 });
 
 const persistConfig = {
